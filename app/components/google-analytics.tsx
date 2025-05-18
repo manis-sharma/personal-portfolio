@@ -1,17 +1,12 @@
 'use client'
 
-import { usePathname, useSearchParams } from 'next/navigation'
-import { useEffect } from 'react'
-import * as gtag from '@/lib/gtag'
+import { Suspense } from 'react'
+import { AnalyticsTracker } from './analytics-tracker'
 
 export default function GoogleAnalytics() {
-  const pathname = usePathname()
-  const searchParams = useSearchParams()
-
-  useEffect(() => {
-    const url = pathname + searchParams.toString()
-    gtag.pageview(url)
-  }, [pathname, searchParams])
-
-  return null
+  return (
+    <Suspense fallback={null}>
+      <AnalyticsTracker />
+    </Suspense>
+  )
 }
