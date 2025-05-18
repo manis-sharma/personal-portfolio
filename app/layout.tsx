@@ -1,4 +1,3 @@
-"use client";
 import type React from "react"   
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
@@ -69,7 +68,7 @@ export default function RootLayout({
         <GoogleAnalytics />
         <EmailInit />
         {children}
-        <Toaster richColors position="top-right" /> {/* Add this component here */}
+        <Toaster richColors position="top-right" /> 
       </body>
     </html>
   )
