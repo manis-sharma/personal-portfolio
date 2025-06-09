@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Manish Sharma | Cyberpunk Portfolio 2082",
     description: "A neon-charged futuristic hacker-style portfolio of developer Manish Sharma.",
-    url: "https://personal-portfolio-pied-delta.vercel.app/", // Consider updating if your domain changes
+    url: "https://personal-portfolio-pied-delta.vercel.app/",
     siteName: "Ghost Protocol",
     images: [
       {
@@ -45,14 +45,16 @@ export const metadata: Metadata = {
   generator: "Next.js"
 }
 
+
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode
-}>) {
+}) {
   return (
     <html lang="en">
       <head>
+        <link rel="icon" href="/favico.png" />
         {/* Google Analytics */}
         <Script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`} strategy="afterInteractive" />
         <Script id="google-analytics" strategy="afterInteractive">

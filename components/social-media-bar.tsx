@@ -20,31 +20,31 @@ export function SocialMediaBar({ vertical = false }: { vertical?: boolean }) {
     {
       name: "Facebook",
       icon: <Facebook className="h-5 w-5" />,
-      url: "https://facebook.com",
+      url: "https://www.facebook.com/profile.php?id=100086450979626",
       color: "#4267B2",
     },
     {
       name: "Gmail",
       icon: <Mail className="h-5 w-5" />,
-      url: "mailto:contact@example.com",
+      url: "mailto:manish.234th@gmail.com",
       color: "#EA4335",
     },
     {
       name: "GitHub",
       icon: <Github className="h-5 w-5" />,
-      url: "https://github.com",
+      url: "https://github.com/manis-sharma",
       color: "#6e5494",
     },
     {
       name: "LinkedIn",
       icon: <Linkedin className="h-5 w-5" />,
-      url: "https://linkedin.com",
+      url: "https://www.linkedin.com/in/manish-sharma-434196364/",
       color: "#0077B5",
     },
     {
       name: "X (Twitter)",
       icon: <Twitter className="h-5 w-5" />,
-      url: "https://twitter.com",
+      url: "https://x.com/Manish_kharel1",
       color: "#1DA1F2",
     },
   ]

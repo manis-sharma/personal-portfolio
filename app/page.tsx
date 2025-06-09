@@ -1,6 +1,6 @@
 import HackerHeroTerminal from "@/components/hacker-hero-terminal"
 import DataNavBar2082 from "@/components/data-nav-bar-2082"
-import FloatingCodePanelGrid from "@/components/floating-code-panel-grid"
+import FloatingCodePanelGrid from "@/components/project"
 import ContactSection from "@/components/contact-section"
 import SkillsSection from "@/components/skills-section"
 import ErrorGlitchFooter from "@/components/error-glitch-footer"

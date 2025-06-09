@@ -33,7 +33,7 @@ export default function BiodataPage() {
       content: [
         { label: "NAME", value: "MANISH SHARMA" },
         { label: "CODENAME", value: "GHOST_PROTOCOL" },
-        { label: "LOCATION", value: "NEO TOKYO, SECTOR 7" },
+        { label: "LOCATION", value: "Tulsipur, Dang" },
         { label: "STATUS", value: "ACTIVE" },
         { label: "CLEARANCE", value: "LEVEL 5" },
       ],
@@ -45,7 +45,7 @@ export default function BiodataPage() {
       content: [
         {
           label: "CURRENT ROLE",
-          value: "SENIOR NEURAL ARCHITECT",
+          value: "JUNIOR NEURAL ARCHITECT",
           details: "Designing advanced digital interfaces and quantum-secured applications",
         },
         {
@@ -228,7 +228,7 @@ export default function BiodataPage() {
             <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-pink-500 rounded-full opacity-70 blur-sm"></div>
             <div className="relative rounded-full overflow-hidden border-2 border-cyan-500 w-32 h-32">
               <Image
-                src="/placeholder.svg?height=128&width=128"
+                src="/placeholder.jpg?height=128&width=128"
                 alt="Profile"
                 width={128}
                 height={128}
@@ -258,7 +258,7 @@ export default function BiodataPage() {
           <div className="ml-auto hidden md:block">
             <PulseButton className="flex items-center gap-2">
               <Download className="h-4 w-4" />
-              DOWNLOAD FULL DOSSIER
+              DOWNLOAD FULL DOCUMENT 
             </PulseButton>
           </div>
         </motion.div>

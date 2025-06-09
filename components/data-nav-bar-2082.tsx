@@ -16,6 +16,7 @@ export default function DataNavBar2082() {
     { name: "PROJECTS", icon: <Code className="h-4 w-4" />, href: "/#projects" },
     { name: "SKILLS", icon: <Shield className="h-4 w-4" />, href: "/#skills" },
     { name: "CONTACT", icon: <Zap className="h-4 w-4" />, href: "/#contact" },
+    { name: "ABOUT", icon: <Zap className="h-4 w-4" />, href: "/biodata" },
   ]
 
   // Close mobile menu when navigating

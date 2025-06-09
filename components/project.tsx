@@ -12,27 +12,28 @@ export default function FloatingCodePanelGrid() {
 
   const projects = [
     {
-      title: "NEURAL INTERFACE v3.2",
-      description: "Advanced brain-computer interface with quantum encryption and neural feedback loops.",
-      image: "/placeholder.svg?height=400&width=600",
-      tags: ["NEURAL", "QUANTUM", "INTERFACE"],
-      link: "#",
+      title: " UNITED ACADEMY DANG, NEPAL",
+      description: "🌐 Official website for United Academy Dang, Nepal – providing academic resources, announcements, and student information.",
+      image: "/united academy.jpg?height=400&width=600",
+      tags: ["SCHOOL", "EDUCATION", "OFFICIAL"],
+      link: "https://united-academy-dang.vercel.app/",
       restricted: false,
     },
     {
-      title: "GHOST PROTOCOL",
-      description: "Untraceable digital identity system with multi-layered encryption and proxy routing.",
-      image: "/placeholder.svg?height=400&width=600",
-      tags: ["SECURITY", "ENCRYPTION", "IDENTITY"],
-      link: "#",
+      title: "URL SHORTENER",
+      description: "Efficient URL shortening service with user-friendly interface and advanced analytics.",
+      
+      image: "/url—shortener.jpg?height=400&width=600",
+      tags: ["URL", "SHORTENER", "ANALYTICS"],
+      link: "https://github.com/manis-sharma/url-shortner",
       restricted: true,
     },
     {
-      title: "NEXUS ARCHITECTURE",
-      description: "Distributed computing framework for AI-enhanced data processing and analysis.",
-      image: "/placeholder.svg?height=400&width=600",
-      tags: ["AI", "DISTRIBUTED", "FRAMEWORK"],
-      link: "#",
+      title: "REACT TODO APP",
+      description: "Efficient URL shortening service with user-friendly interface and advanced analytics.",
+      image: "/react todo iamge.png?height=400&width=600",
+      tags: ["TODO", "REACT", "APPLICATION"],
+      link: "https://github.com/manis-sharma/REACT-TO-DO-",
       restricted: false,
     },
     {
@@ -49,7 +50,7 @@ export default function FloatingCodePanelGrid() {
       image: "/placeholder.svg?height=400&width=600",
       tags: ["MAPPING", "DATA", "VISUALIZATION"],
       link: "#",
-      restricted: false,
+      restricted: true,
     },
     {
       title: "ECHO SYSTEM",
@@ -57,7 +58,7 @@ export default function FloatingCodePanelGrid() {
       image: "/placeholder.svg?height=400&width=600",
       tags: ["COMMUNICATION", "DECENTRALIZED", "SECURE"],
       link: "#",
-      restricted: false,
+      restricted: true,
     },
   ]
 

@@ -86,18 +86,18 @@ export default function ErrorGlitchFooter() {
                 <h3 className="text-sm font-bold text-gray-400 mb-3">NETWORK_NODES</h3>
                 <ul className="space-y-2">
                   <li>
-                    <Link href="#" className="text-xs text-gray-500 hover:text-cyan-400 transition-colors">
+                    <Link href="/projects" className="text-xs text-gray-500 hover:text-cyan-400 transition-colors">
                       PROJECTS
                     </Link>
                   </li>
                   <li>
-                    <Link href="#" className="text-xs text-gray-500 hover:text-cyan-400 transition-colors">
-                      EXPERIMENTS
+                    <Link href="/biodata" className="text-xs text-gray-500 hover:text-cyan-400 transition-colors">
+                      ABOUT
                     </Link>
                   </li>
                   <li>
                     <Link href="#" className="text-xs text-gray-500 hover:text-cyan-400 transition-colors">
-                      DATA_LOGS
+                      HOME
                     </Link>
                   </li>
                 </ul>
@@ -127,15 +127,15 @@ export default function ErrorGlitchFooter() {
             {/* Social links */}
             <div>
               <div className="flex items-center gap-4">
-                <Link href="#" className="text-gray-500 hover:text-cyan-400 transition-colors">
+                <Link href="https://github.com/manis-sharma" className="text-gray-500 hover:text-cyan-400 transition-colors" target="_blank" rel="noopener noreferrer">
                   <Github className="h-5 w-5" />
                   <span className="sr-only">GitHub</span>
                 </Link>
-                <Link href="#" className="text-gray-500 hover:text-cyan-400 transition-colors">
+                <Link href="https://x.com/Manish_kharel1" className="text-gray-500 hover:text-cyan-400 transition-colors" target="_blank" rel="noopener noreferrer">
                   <Twitter className="h-5 w-5" />
-                  <span className="sr-only">Twitter</span>
+                  <span className="sr-only" >Twitter</span>
                 </Link>
-                <Link href="#" className="text-gray-500 hover:text-cyan-400 transition-colors">
+                <Link href="https://www.linkedin.com/in/manish-sharma-434196364/" className="text-gray-500 hover:text-cyan-400 transition-colors" target="_blank" rel="noopener noreferrer">
                   <Linkedin className="h-5 w-5" />
                   <span className="sr-only">LinkedIn</span>
                 </Link>
