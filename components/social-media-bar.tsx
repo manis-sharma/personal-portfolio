@@ -13,6 +13,7 @@ interface SocialLink {
   color: string
 }
 
+
 export function SocialMediaBar({ vertical = false }: { vertical?: boolean }) {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
