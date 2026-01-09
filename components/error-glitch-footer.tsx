@@ -5,6 +5,9 @@ import { motion } from "framer-motion"
 import { Terminal, Github, Twitter, Linkedin } from "lucide-react"
 import Link from "next/link"
 
+
+
+
 export default function ErrorGlitchFooter() {
   const [timestamp, setTimestamp] = useState("--.--.-- --:--:--")
   const [glitchText, setGlitchText] = useState(false)
