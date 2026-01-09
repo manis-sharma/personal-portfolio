@@ -7,6 +7,9 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Send, X, Loader2 } from "lucide-react"
 import { PulseButton } from "./pulse-button"
 
+
+
+
 interface FormData {
   name: string
   email: string
