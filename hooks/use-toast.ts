@@ -1,4 +1,4 @@
-"use client"
+r"use client"
 
 // Inspired by react-hot-toast library
 import * as React from "react"
@@ -16,6 +16,8 @@ type ToasterToast = ToastProps & {
   title?: React.ReactNode
   description?: React.ReactNode
   action?: ToastActionElement
+
+
 }
 
 const actionTypes = {
