@@ -8,10 +8,10 @@
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./src/*"]
     },
     "types": []
   },
-  "include": ["**/*.js", "**/*.jsx"],
+  "include": ["src/**/*.js", "src/**/*.jsx"],
   "exclude": ["node_modules"]
 }
