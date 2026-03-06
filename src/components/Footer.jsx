@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Download } from 'lucide-react';
+import { Github, Linkedin, Twitter, Download } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -31,12 +31,22 @@ export default function Footer() {
             <Linkedin className="w-6 h-6" />
           </motion.a>
           <motion.a
+  href="https://x.com/yourusername"
+  target="_blank"
+  rel="noopener noreferrer"
+  whileHover={{ y: -2 }}
+  className="text-gray-400 hover:text-accent transition-colors"
+>
+  <Twitter className="w-6 h-6" />
+</motion.a>
+          <motion.a
             href="#"
             whileHover={{ y: -2 }}
             className="text-gray-400 hover:text-accent transition-colors"
           >
             <Download className="w-6 h-6" />
           </motion.a>
+          
         </div>
 
         <p className="text-gray-500 text-sm text-center md:text-right">
