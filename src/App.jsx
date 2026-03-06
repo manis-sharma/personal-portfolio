@@ -9,7 +9,6 @@ import Projects from '@/components/Projects';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import { Analytics } from '@vercel/analytics/react';
-import { Analytics } from "@vercel/analytics/next";
 
 export default function App() {
   const [mounted, setMounted] = useState(false);
@@ -42,7 +41,6 @@ export default function App() {
         </section>
         <Footer />
       </div>
-      <Analytics />
     </main>
   );
 }
