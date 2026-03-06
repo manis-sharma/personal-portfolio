@@ -46,13 +46,7 @@ export default function Hero() {
               Contact Me
             </Button>
           </a>
-          <a
-            href="#"
-            className="text-sm text-gray-400 hover:text-accent transition-colors font-medium flex items-center gap-1.5 mt-1 sm:mt-0"
-          >
-            <Download className="w-4 h-4" />
-            Resume
-          </a>
+        
         </motion.div>
 
         <motion.p
