@@ -50,7 +50,7 @@ export default function Footer() {
         </div>
 
         <p className="text-gray-500 text-sm text-center md:text-right">
-          © {new Date().getFullYear()} Manish Dada. All rights reserved.
+          © {new Date().getFullYear()} Manish Sharma. All rights reserved.
         </p>
       </div>
     </motion.footer>

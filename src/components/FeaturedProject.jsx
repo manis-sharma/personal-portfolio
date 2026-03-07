@@ -1,7 +1,38 @@
 import { motion } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
+import { Volume2, VolumeX } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function FeaturedProject() {
+  const videoRef = useRef(null);
+  const [muted, setMuted] = useState(true);
+
+  const toggleMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !muted;
+      setMuted(!muted);
+    }
+  };
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section className="py-20 px-6 md:px-12 lg:px-20 bg-gradient-to-b from-blue-900/10 to-transparent">
       <motion.div
@@ -106,12 +137,21 @@ export default function FeaturedProject() {
   <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-amber-500/20 rounded-xl blur-3xl" />
 
   <video
+    ref={videoRef}
     className="relative rounded-xl border border-blue-500/30 shadow-2xl w-full max-h-[350px] object-cover"
-    loop playsInline controls
+    loop playsInline muted autoPlay
   >
     <source src="/fearuredprojectsample.mp4" type="video/mp4" />
     Your browser does not support the video tag.
   </video>
+
+  <button
+    onClick={toggleMute}
+    className="absolute bottom-3 right-3 z-10 p-2 rounded-full bg-black/60 backdrop-blur-sm border border-white/20 text-white hover:bg-black/80 transition-colors"
+    aria-label={muted ? "Unmute video" : "Mute video"}
+  >
+    {muted ? <VolumeX size={18} /> : <Volume2 size={18} />}
+  </button>
 </div>
             </div>
           </motion.div>

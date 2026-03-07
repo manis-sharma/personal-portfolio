@@ -1,24 +1,37 @@
-import { motion } from 'framer-motion';
-import { Button } from '@/components/ui/button';
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
 
 const projects = [
   {
-    title: 'Social Media Manager',
-    description: 'Automated social media posting platform that saves hours per week by scheduling and managing posts across multiple platforms seamlessly.',
-    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop',
-    techStack: ['Python', 'Automation', 'API Integration'],
-    impact: '40+ hours/week saved per user',
-    demoUrl: '#',
-    githubUrl: '#',
+    title: "Multi-Platform Social Media Scheduling System",
+    description:
+      "Production-grade social media automation platform that schedules, queues, and publishes videos across multiple platforms using a scalable backend architecture with job queues, OAuth integrations, and real-time monitoring.",
+    image:
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop",
+    techStack: [
+      "Python",
+      "FastAPI",
+      "PostgreSQL",
+      "React",
+      "Redis",
+      "Celery",
+      "OAuth 2.0",
+      "Docker",
+    ],
+    impact: "Automated content publishing workflow across multiple platforms.",
+    demoUrl: "#",
+    githubUrl: "http://github.com/manis-sharma/Multi-Platform-Social-Media-Scheduling-System/",
   },
   {
-    title: 'Personal PC Assistant',
-    description: 'Intelligent voice and text-based PC control assistant that executes commands, manages files, and provides real-time system information.',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=300&fit=crop',
-    techStack: ['Python', 'AI/ML', 'Desktop App'],
-    impact: '95% command recognition accuracy',
-    demoUrl: '#',
-    githubUrl: '#',
+    title: "Personal PC Assistant",
+    description:
+      "An AI-powered voice and text-based desktop assistant built with Python that automates system operations such as file management, application launching, web navigation, and real-time system monitoring.",
+    image:
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=300&fit=crop",
+    techStack: ["Python", "AI/ML", "Desktop Application, NLP "],
+    impact: "Impact: Achieved 95% command recognition accuracy during testing.",
+    demoUrl: "#",
+    githubUrl: "https://github.com/manis-sharma/Pc-Automation-System",
   },
 ];
 
@@ -57,7 +70,9 @@ export default function Projects() {
               <h3 className="text-xl font-bold text-white mb-3">
                 {project.title}
               </h3>
-              <p className="text-gray-300 mb-4 flex-grow text-base leading-relaxed">{project.description}</p>
+              <p className="text-gray-300 mb-4 flex-grow text-base leading-relaxed">
+                {project.description}
+              </p>
 
               <div className="flex flex-wrap gap-2 mb-4">
                 {project.techStack.map((tech, idx) => (
@@ -77,17 +92,15 @@ export default function Projects() {
               </div>
 
               <div className="flex gap-3">
-                <Button
-                  className="flex-1 bg-accent hover:bg-amber-600 text-black font-semibold flex items-center justify-center gap-2 h-10"
-                >
-                  Live Demo
+                <Button className="flex-1 bg-accent hover:bg-amber-600 text-black font-semibold flex items-center justify-center gap-2 h-10">
+                  READ MORE
                   <span>→</span>
                 </Button>
                 <Button
                   variant="outline"
                   className="flex-1 border-2 border-blue-400 text-blue-300 hover:bg-blue-400/10 font-semibold h-10 flex items-center justify-center"
                 >
-                  GitHub
+                  view code
                 </Button>
               </div>
             </motion.div>
