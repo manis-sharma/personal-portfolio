@@ -31,7 +31,7 @@ export default function Footer() {
             <Linkedin className="w-6 h-6" />
           </motion.a>
           <motion.a
-  href="https://x.com/yourusername"
+  href="https://x.com/manisxcode"
   target="_blank"
   rel="noopener noreferrer"
   whileHover={{ y: -2 }}
@@ -40,7 +40,8 @@ export default function Footer() {
   <Twitter className="w-6 h-6" />
 </motion.a>
           <motion.a
-            href="#"
+            href="/myreume.pdf"
+            download
             whileHover={{ y: -2 }}
             className="text-gray-400 hover:text-accent transition-colors"
           >

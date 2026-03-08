@@ -7,7 +7,7 @@ const projects = [
     description:
       "Production-grade social media automation platform that schedules, queues, and publishes videos across multiple platforms using a scalable backend architecture with job queues, OAuth integrations, and real-time monitoring.",
     image:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop",
+      "personalpcassistantui.jpg",
     techStack: [
       "Python",
       "FastAPI",

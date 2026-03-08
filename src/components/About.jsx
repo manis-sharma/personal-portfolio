@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 
 export default function About() {
   const highlights = [
-    { label: 'Years Experience', value: '3+' },
+    { label: 'Years Experience', value: '2+' },
     { label: 'Projects Completed', value: '15+' },
     { label: 'Technologies', value: '12+' },
   ];
@@ -33,9 +33,11 @@ export default function About() {
           >
             <div className="relative w-56 h-56 md:w-64 md:h-64 rounded-xl overflow-hidden border-2 border-blue-500/30 shadow-lg shadow-blue-500/10">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-amber-500/20" />
-              <div className="w-full h-full bg-card flex items-center justify-center">
-                <span className="text-7xl">👨‍💻</span>
-              </div>
+              <img
+                src="/myimage.jpg"
+                alt="Manish Sharma"
+                className="w-full h-full object-cover"
+              />
             </div>
           </motion.div>
 
@@ -61,7 +63,7 @@ export default function About() {
             </div>
 
             <div className="flex flex-wrap gap-2">
-              {['React', 'Python', 'Next.js', 'TypeScript', 'Node.js', 'Firebase'].map((tech) => (
+              {['Python', 'JavaScript', 'Next.js', 'TypeScript', 'React', 'MongoDB', 'C',].map((tech) => (
                 <span
                   key={tech}
                   className="px-3 py-1.5 bg-blue-900/30 border border-blue-500/40 rounded-full text-xs font-semibold text-blue-300"
@@ -71,7 +73,7 @@ export default function About() {
               ))}
             </div>
 
-            <a href="#" className="inline-block">
+            <a href="/myresume.pdf" download className="inline-block">
               <Button
                 variant="outline"
                 className="border-2 border-blue-400 text-blue-300 hover:bg-blue-400/10 font-semibold h-11 flex items-center gap-2"
