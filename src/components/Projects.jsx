@@ -7,7 +7,7 @@ const projects = [
     description:
       "Production-grade social media automation platform that schedules, queues, and publishes videos across multiple platforms using a scalable backend architecture with job queues, OAuth integrations, and real-time monitoring.",
     image:
-      "personalpcassistantui.jpg",
+      "SMMS.jpg",
     techStack: [
       "Python",
       "FastAPI",
@@ -27,7 +27,7 @@ const projects = [
     description:
       "An AI-powered voice and text-based desktop assistant built with Python that automates system operations such as file management, application launching, web navigation, and real-time system monitoring.",
     image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=300&fit=crop",
+      "pcassistantiamge.png",
     techStack: ["Python", "AI/ML", "Desktop Application, NLP "],
     impact: "Impact: Achieved 95% command recognition accuracy during testing.",
     demoUrl: "#",
