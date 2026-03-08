@@ -92,15 +92,20 @@ export default function Projects() {
               </div>
 
               <div className="flex gap-3">
-                <Button className="flex-1 bg-accent hover:bg-amber-600 text-black font-semibold flex items-center justify-center gap-2 h-10">
-                  READ MORE
-                  <span>→</span>
+                <Button asChild className="flex-1 bg-accent hover:bg-amber-600 text-black font-semibold flex items-center justify-center gap-2 h-10">
+                  <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
+                    READ MORE
+                    <span>→</span>
+                  </a>
                 </Button>
                 <Button
+                  asChild
                   variant="outline"
                   className="flex-1 border-2 border-blue-400 text-blue-300 hover:bg-blue-400/10 font-semibold h-10 flex items-center justify-center"
                 >
-                  view code
+                  <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                    view code
+                  </a>
                 </Button>
               </div>
             </motion.div>
