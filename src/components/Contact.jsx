@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 
-const interests = ['Web Development', 'UX/UI Design', 'Branding', 'App Development', 'Motion Design'];
-const budgets = ['$2k-$5k', '$5k-$10k', '$10k-$20k', '$30k-$40k', '$50k+'];
+const interests = ['Web Development', 'Automation Development', 'Bot Development'];
+const budgets = ['$2k-$5k', '$5k-$10k', '$10k-$20k'];
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -12,7 +12,7 @@ export default function Contact() {
     email: '',
     message: '',
   });
-  const [selectedInterests, setSelectedInterests] = useState([]);
+  const [selectedInterest, setSelectedInterest] = useState('');
   const [selectedBudget, setSelectedBudget] = useState('');
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
@@ -20,23 +20,21 @@ export default function Contact() {
   const [apiError, setApiError] = useState('');
 
   const toggleInterest = (item) => {
-    setSelectedInterests((prev) =>
-      prev.includes(item) ? prev.filter((i) => i !== item) : [...prev, item]
-    );
+    setSelectedInterest((prev) => (prev === item ? '' : item));
   };
 
   const validateForm = () => {
     const newErrors = {};
-    if (!formData.name.trim()) newErrors.name = 'Name is required';
-    if (!formData.phone.trim()) newErrors.phone = 'Phone number is required';
-    if (!formData.company.trim()) newErrors.company = 'Company name is required';
+    if (!formData.name.trim()) newErrors.name = true;
+    if (!formData.phone.trim()) newErrors.phone = true;
+    if (!formData.company.trim()) newErrors.company = true;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!formData.email.trim()) {
-      newErrors.email = 'Email is required';
+      newErrors.email = true;
     } else if (!emailRegex.test(formData.email)) {
       newErrors.email = 'Please enter a valid email';
     }
-    if (!formData.message.trim()) newErrors.message = 'Message is required';
+    if (!formData.message.trim()) newErrors.message = true;
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -55,14 +53,14 @@ export default function Contact() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           ...formData,
-          interests: selectedInterests,
+          interest: selectedInterest,
           budget: selectedBudget,
         }),
       });
       if (!response.ok) throw new Error('Failed to send message');
       setSuccess(true);
       setFormData({ name: '', phone: '', company: '', email: '', message: '' });
-      setSelectedInterests([]);
+      setSelectedInterest('');
       setSelectedBudget('');
       setTimeout(() => setSuccess(false), 5000);
     } catch (err) {
@@ -73,10 +71,7 @@ export default function Contact() {
   };
 
   return (
-    <section className="relative py-24 px-6 md:px-12 lg:px-20 overflow-hidden">
-      {/* Purple gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-purple-900/80 via-[#1a1040] to-[#0d0a1a] -z-10" />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-purple-500/30 rounded-full blur-[120px] -z-10" />
+    <section className="py-24 px-6 md:px-12 lg:px-20">
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -102,32 +97,30 @@ export default function Contact() {
                 <div>
                   <div className="flex justify-between mb-2">
                     <label htmlFor="name" className="text-sm font-medium text-gray-300">Name</label>
-                    <span className="text-xs text-orange-400 font-medium">Required</span>
+                    {errors.name && <span className="text-xs text-orange-400 font-medium">Required</span>}
                   </div>
                   <input
                     id="name"
                     type="text"
-                    placeholder="Alexandre"
+                    placeholder="Your name"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full bg-[#1a1535]/80 border border-purple-500/20 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-500/20 text-sm"
+                    className={`w-full bg-input border rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 text-sm ${errors.name ? 'border-orange-400' : 'border-border'}`}
                   />
-                  {errors.name && <p className="text-red-400 text-xs mt-1">{errors.name}</p>}
                 </div>
                 <div>
                   <div className="flex justify-between mb-2">
                     <label htmlFor="phone" className="text-sm font-medium text-gray-300">Phone Number</label>
-                    <span className="text-xs text-orange-400 font-medium">Required</span>
+                    {errors.phone && <span className="text-xs text-orange-400 font-medium">Required</span>}
                   </div>
                   <input
                     id="phone"
                     type="tel"
-                    placeholder="Alexandre"
+                    placeholder="Your phone number"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full bg-[#1a1535]/80 border border-purple-500/20 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-500/20 text-sm"
+                    className={`w-full bg-input border rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 text-sm ${errors.phone ? 'border-orange-400' : 'border-border'}`}
                   />
-                  {errors.phone && <p className="text-red-400 text-xs mt-1">{errors.phone}</p>}
                 </div>
               </div>
 
@@ -136,32 +129,30 @@ export default function Contact() {
                 <div>
                   <div className="flex justify-between mb-2">
                     <label htmlFor="company" className="text-sm font-medium text-gray-300">Company Name</label>
-                    <span className="text-xs text-orange-400 font-medium">Required</span>
+                    {errors.company && <span className="text-xs text-orange-400 font-medium">Required</span>}
                   </div>
                   <input
                     id="company"
                     type="text"
-                    placeholder="Alexandre"
+                    placeholder="Your company"
                     value={formData.company}
                     onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                    className="w-full bg-[#1a1535]/80 border border-purple-500/20 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-500/20 text-sm"
+                    className={`w-full bg-input border rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 text-sm ${errors.company ? 'border-orange-400' : 'border-border'}`}
                   />
-                  {errors.company && <p className="text-red-400 text-xs mt-1">{errors.company}</p>}
                 </div>
                 <div>
                   <div className="flex justify-between mb-2">
                     <label htmlFor="email" className="text-sm font-medium text-gray-300">Your Email</label>
-                    <span className="text-xs text-orange-400 font-medium">Required</span>
+                    {errors.email && <span className="text-xs text-orange-400 font-medium">{errors.email === true ? 'Required' : errors.email}</span>}
                   </div>
                   <input
                     id="email"
                     type="email"
-                    placeholder="Alexandre"
+                    placeholder="your.email@example.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full bg-[#1a1535]/80 border border-purple-500/20 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-500/20 text-sm"
+                    className={`w-full bg-input border rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 text-sm ${errors.email ? 'border-orange-400' : 'border-border'}`}
                   />
-                  {errors.email && <p className="text-red-400 text-xs mt-1">{errors.email}</p>}
                 </div>
               </div>
 
@@ -169,7 +160,7 @@ export default function Contact() {
               <div>
                 <div className="flex justify-between mb-2">
                   <label htmlFor="message" className="text-sm font-medium text-gray-300">Tell Us More About Your Project</label>
-                  <span className="text-xs text-orange-400 font-medium">Required</span>
+                  {errors.message && <span className="text-xs text-orange-400 font-medium">Required</span>}
                 </div>
                 <textarea
                   id="message"
@@ -177,9 +168,8 @@ export default function Contact() {
                   rows={5}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full bg-[#1a1535]/80 border border-purple-500/20 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-500/20 resize-none text-sm"
+                  className={`w-full bg-input border rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 resize-none text-sm ${errors.message ? 'border-orange-400' : 'border-border'}`}
                 />
-                {errors.message && <p className="text-red-400 text-xs mt-1">{errors.message}</p>}
               </div>
 
               {/* Submit button */}
@@ -223,9 +213,9 @@ export default function Contact() {
                       type="button"
                       onClick={() => toggleInterest(item)}
                       className={`px-5 py-2.5 rounded-full text-sm font-medium border transition-colors ${
-                        selectedInterests.includes(item)
-                          ? 'bg-purple-600 border-purple-500 text-white'
-                          : 'bg-transparent border-purple-500/40 text-gray-300 hover:border-purple-400 hover:text-white'
+                        selectedInterest === item
+                          ? 'bg-blue-600 border-blue-500 text-white'
+                          : 'bg-transparent border-blue-500/40 text-gray-300 hover:border-blue-400 hover:text-white'
                       }`}
                     >
                       {item}
@@ -245,8 +235,8 @@ export default function Contact() {
                       onClick={() => setSelectedBudget(item)}
                       className={`px-5 py-2.5 rounded-full text-sm font-medium border transition-colors ${
                         selectedBudget === item
-                          ? 'bg-purple-600 border-purple-500 text-white'
-                          : 'bg-transparent border-purple-500/40 text-gray-300 hover:border-purple-400 hover:text-white'
+                          ? 'bg-blue-600 border-blue-500 text-white'
+                          : 'bg-transparent border-blue-500/40 text-gray-300 hover:border-blue-400 hover:text-white'
                       }`}
                     >
                       {item}
