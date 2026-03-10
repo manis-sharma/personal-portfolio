@@ -18,6 +18,7 @@ export default function App() {
     document.documentElement.style.scrollBehavior = 'smooth';
   }, []);
 
+  
   if (!mounted) return null;
 
   return (
